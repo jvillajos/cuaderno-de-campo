@@ -1,0 +1,10 @@
+<div
+      class="spinner"
+      [attr.aria-label]="ariaLabel()"
+      role="status"
+      aria-live="polite"
+    >
+      @if (showText()) {
+        <span class="visually-hidden">{{ text() }}</span>
+      }
+    </div>

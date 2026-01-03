@@ -1,0 +1,12 @@
+<input
+      #inputElement
+      [type]="type()"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [value]="value() || internalValue"
+      [attr.aria-describedby]="ariaDescribedBy()"
+      [attr.aria-invalid]="hasError()"
+      (input)="handleInput($event)"
+      (blur)="handleBlur()"
+      (focus)="handleFocus()"
+    />

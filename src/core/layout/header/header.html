@@ -1,0 +1,33 @@
+<header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav-brand">
+            <a routerLink="/" class="brand-link">
+              <h1 class="brand-title">Cuaderno de Campo</h1>
+            </a>
+          </div>
+
+          <div class="nav-links">
+            @if (authService.isAuthenticated()) {
+              <a routerLink="/parcelas" class="nav-link">Parcelas</a>
+              <a routerLink="/trabajos" class="nav-link">Trabajos</a>
+              <a routerLink="/gastosingresos" class="nav-link">Gastos</a>
+              <a routerLink="/profile" class="nav-link">Perfil</a>
+            }
+          </div>
+
+          <div class="nav-actions">
+            @if (authService.isAuthenticated()) {
+              <div class="user-menu">
+                <span class="user-name">{{ authService.user()?.name }}</span>
+                <button app-button variant="secondary" size="small" (buttonClick)="logout()">
+                  Logout
+                </button>
+              </div>
+            } @else {
+              <button app-button variant="primary" (buttonClick)="goToLogin()">Login</button>
+            }
+          </div>
+        </nav>
+      </div>
+    </header>
