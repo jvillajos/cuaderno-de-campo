@@ -20,11 +20,13 @@ export class Header {
   private router = inject(Router);
 
   logout(): void {
+    console.log("logout.");
     this.authService.logout();
     this.router.navigate(['/login']);
   }
 
   goToLogin(): void {
+    debugger;
     this.router.navigate(['/login']);
   }
 }

@@ -9,9 +9,9 @@
 
           <div class="nav-links">
             @if (authService.isAuthenticated()) {
-              <a routerLink="/parcelas" class="nav-link">Parcelas</a>
-              <a routerLink="/trabajos" class="nav-link">Trabajos</a>
-              <a routerLink="/gastosingresos" class="nav-link">Gastos</a>
+              <a routerLink="/parcels" class="nav-link">Parcelas</a>
+              <a routerLink="/works" class="nav-link">Trabajos</a>
+              <a routerLink="/profits" class="nav-link">Gastos</a>
               <a routerLink="/profile" class="nav-link">Perfil</a>
             }
           </div>
@@ -20,12 +20,12 @@
             @if (authService.isAuthenticated()) {
               <div class="user-menu">
                 <span class="user-name">{{ authService.user()?.name }}</span>
-                <button app-button variant="secondary" size="small" (buttonClick)="logout()">
+                <button app-button variant="secondary" size="small" (click)="logout()">
                   Logout
                 </button>
               </div>
             } @else {
-              <button app-button variant="primary" (buttonClick)="goToLogin()">Login</button>
+              <button app-button variant="primary" (click)="goToLogin()">Login</button>
             }
           </div>
         </nav>
